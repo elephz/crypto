@@ -8,7 +8,7 @@
 
    ```bash
    https://github.com/elephz/crypto.git
-   cd jenosize
+   cd crypto
    ```
 
 2. **ติดตั้ง Composer dependencies**
