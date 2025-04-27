@@ -1,3 +1,79 @@
+# วิธีติดตั้งและรันโปรเจกต์ Laravel
+
+ทำตามขั้นตอนด้านล่างเพื่อรันโปรเจกต์ Laravel บนเครื่องของคุณ:
+
+## ขั้นตอนการติดตั้ง
+
+1. **Clone โปรเจกต์จาก GitHub**
+
+   ```bash
+   https://github.com/elephz/crypto.git
+   cd jenosize
+   ```
+
+2. **ติดตั้ง Composer dependencies**
+
+   ```bash
+   composer install
+   ```
+
+3. **คัดลอกไฟล์ `.env`**
+
+   ```bash
+   cp .env.example .env
+   ```
+
+4. **ตั้งค่าฐานข้อมูลในไฟล์ `.env`**
+
+   แก้ไขข้อมูลฐานข้อมูลในไฟล์ `.env` ให้ตรงกับการตั้งค่าของเครื่องคุณ:
+
+   ```env
+   DB_CONNECTION=mysql
+   DB_HOST=127.0.0.1
+   DB_PORT=3306
+   DB_DATABASE=jenosize
+   DB_USERNAME=root
+   DB_PASSWORD=root
+   ```
+
+5. **สร้าง application key**
+
+   ```bash
+   php artisan key:generate
+   ```
+
+6. **รัน migration เพื่อสร้างตารางในฐานข้อมูล**
+
+   ```bash
+   php artisan migrate
+   ```
+
+7. **(ถ้าต้องการ mock ข้อมูลสินค้า) รัน seeder**
+
+   ```bash
+   php artisan db:seed
+   ```
+
+8. **รันเซิร์ฟเวอร์ Laravel**
+
+   ```bash
+   php artisan serve
+   ```
+
+   เมื่อรันเสร็จสามารถเข้าถึงโปรเจกต์ได้ที่ `http://127.0.0.1:8000`
+
+---
+
+## API URL
+
+```bash
+   http://127.0.0.1:8000/api/currencies
+   http://127.0.0.1:8000/api/tranfer
+   http://127.0.0.1:8000/api/orders
+   ```
+---
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
